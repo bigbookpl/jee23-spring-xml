@@ -7,4 +7,11 @@
     <constructor-arg value="Witaj Spring" name="message"/>
   </bean>
 
+  <bean id="messageService" class="pl.coderslab.beans.EmailService"/>
+
+  <bean id="messageSender" class="pl.coderslab.beans.MessageSender">
+    <constructor-arg ref="messageService"/>
+    <property name="message" value="Message from xml"/>
+  </bean>
+
 </beans>
